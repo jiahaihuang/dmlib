@@ -1,0 +1,1 @@
+unsigned long EDesEn_Crypt(unsigned long src);

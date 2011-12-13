@@ -1,0 +1,93 @@
+BL51 BANKED LINKER/LOCATER V6.00                                                        12/14/2011  00:03:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.00, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj, .\dm.LIB TO uselib
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  .\dm.LIB (DM)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  uselib (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000CH     UNIT         _DATA_GROUP_
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0029H     UNIT         ?PR?MAIN?MAIN
+            CODE    002CH     0019H     UNIT         ?PR?_EDESEN_CRYPT?DM
+            CODE    0045H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   uselib (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0008H
+  +--> ?PR?_EDESEN_CRYPT?DM
+
+?PR?_EDESEN_CRYPT?DM           0010H    0004H
+
+
+
+SYMBOL TABLE OF MODULE:  uselib (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.00                                                      12/14/2011  00:03:40  PAGE 2
+
+
+  D:0008H         SYMBOL        srcdata
+  D:0004H         SYMBOL        dstdata
+  D:000CH         SYMBOL        result
+  -------         ENDDO         
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:000FH         LINE#         6
+  C:000FH         LINE#         7
+  C:0018H         LINE#         9
+  C:0023H         LINE#         10
+  C:002BH         LINE#         11
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        DM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:002CH         PUBLIC        _EDesEn_Crypt
+  -------         PROC          _EDESEN_CRYPT
+  D:0010H         SYMBOL        src
+  C:002CH         LINE#         3
+  C:0034H         LINE#         4
+  C:0034H         LINE#         5
+  C:0044H         LINE#         6
+  -------         ENDPROC       _EDESEN_CRYPT
+  -------         ENDMOD        DM
+
+Program Size: data=21.0 xdata=0 code=81
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

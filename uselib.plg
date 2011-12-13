@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+D:\keil_use_lib\uselib.uv2
+Project File Date:  12/14/2011
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=21.0 xdata=0 code=81
+creating hex file from "uselib"...
+"uselib" - 0 Error(s), 0 Warning(s).
